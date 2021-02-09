@@ -37,7 +37,19 @@ Vault server configuration file(s):
 ```hcl
 # Paste your Vault config here.
 # Be sure to scrub any sensitive values
+./rotate_linux_password.sh root
+curl: (22) The requested URL returned error: 500 Internal Server Error
+root's password was stored in Vault and updated locally.
 ```
 
 **Additional context**
-Add any other context about the problem here.
+When I try to use vault as painless password rotation it throws above error.
+
+export VAULT_ADDR=https:<IP>:8200
+export VAULT_TOKEN=<token>
+
+I exported these variables too.
+
+issue occurs only when I use and DNS name as "VAULT_ADDR" value, when I use IP value for "VAULT_ADDR" It runs good.
+How do I need to resolve this issue.
+
